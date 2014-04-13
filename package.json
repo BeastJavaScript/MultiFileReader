@@ -1,0 +1,12 @@
+{
+    "name":"mega-reader",
+    "version":"0.0.1",
+    "main":"bin/MegaFile.js",
+    "description":"read through a huge amount of files as if it were one file",
+    "dependencies":{
+        "beast-lr-sync":"*"
+    },
+    "devDependencies":{
+        "beast-test":"0.*"
+    }
+}
