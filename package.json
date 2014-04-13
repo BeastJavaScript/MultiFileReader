@@ -7,6 +7,10 @@
         "beast-lr-sync":"*"
     },
     "devDependencies":{
-        "beast-test":"0.*"
+        "beast-test":"0.*",
+        "coffee-script":"*"
+    },
+    "scripts":{
+        "prepublish":"coffee -c -o bin src/MegaFile.coffee"
     }
 }
