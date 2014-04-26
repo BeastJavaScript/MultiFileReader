@@ -59,6 +59,11 @@
       }
     };
 
+    MegaFile.prototype.reset = function() {
+      this.position = 0;
+      return this.reader = null;
+    };
+
     return MegaFile;
 
   })();

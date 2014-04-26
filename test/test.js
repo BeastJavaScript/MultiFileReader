@@ -28,6 +28,15 @@
     };
 
     TestOpenFiles.prototype.testFilesExistence = function(mf) {
+      var line1, line2;
+      this.assertTrue(mf.hasNextLine());
+      line1 = mf.getNextLine();
+      console.log(line1);
+      mf.reset();
+      this.assertTrue(mf.hasNextLine());
+      line2 = mf.getNextLine();
+      console.log(line2);
+      this.assertEquals(line1, line2);
       this.assertTrue(mf.hasNextLine());
       console.log(mf.getNextLine());
       this.assertTrue(mf.hasNextLine());
@@ -38,8 +47,8 @@
       console.log(mf.getNextLine());
       this.assertTrue(mf.hasNextLine());
       console.log(mf.getNextLine());
-      this.assertTrue(mf.hasNextLine());
-      return console.log(mf.getNextLine());
+      mf.reset();
+      return this.assertTrue(mf.position === 0);
     };
 
     return TestOpenFiles;

@@ -20,8 +20,6 @@ class MegaFile
   updateReader:->
     @reader=new LineReaderSync(@getFile())
 
-
-
   file:->
     if typeof @files[@position] is "string"
       return @files[@position]
@@ -39,6 +37,10 @@ class MegaFile
       if (stat=fs.statSync(file)) and stat.isFile()
         return true
     else false
+
+  reset:->
+    @position=0
+    @reader=null
 
 
 module.exports.MegaFile=MegaFile

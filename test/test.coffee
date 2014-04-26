@@ -17,7 +17,15 @@ new class TestOpenFiles extends TestCase
 
   testFilesExistence:(mf)->
     @assertTrue mf.hasNextLine()
-    console.log mf.getNextLine()
+    line1=mf.getNextLine()
+    console.log line1
+
+    mf.reset()
+    @assertTrue mf.hasNextLine()
+    line2= mf.getNextLine()
+    console.log line2
+
+    @assertEquals(line1,line2)
 
     @assertTrue mf.hasNextLine()
     console.log mf.getNextLine()
@@ -33,6 +41,9 @@ new class TestOpenFiles extends TestCase
 
     @assertTrue mf.hasNextLine()
     console.log mf.getNextLine()
+
+    mf.reset()
+    @assertTrue(mf.position is 0)
 
 
 console.log TestCase.getResult()
